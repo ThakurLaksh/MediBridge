@@ -1,2 +1,3 @@
 # MediBridge
-Decentralized patient health record system
+Decentralized patient health record system.
+MediBridge is a decentralized patient health record system designed to empower individuals with full control over their medical data. Unlike traditional centralized systems, MediBridge leverages blockchain or peer-to-peer technologies to ensure that patient records are securely stored, tamper-proof, and accessible only by authorized users. This approach enhances data privacy, reduces the risk of breaches, and eliminates dependency on a single point of failure. Patients, healthcare providers, and institutions can seamlessly and securely share information, improving care coordination while preserving confidentiality. MediBridge marks a transformative step toward transparent, secure, and patient-centric digital healthcare.
