@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediBridge</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="login-container" id="loginPage">
+    <div class="login-box">
+      <h2>MediBridge Login</h2>
+      <input type="text" placeholder="Username" id="username" />
+      <input type="password" placeholder="Password" id="password" />
+      <button onclick="login()">Login</button>
+      <div class="auth-links">
+        <hr>
+        <button onclick="googleSignIn()">Sign in with Gmail</button>
+        <button onclick="alert('Sign Up Page - Coming Soon')">Sign Up</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard hidden" id="dashboardPage">
+    <div class="sidebar">
+      <i class="fas fa-home" title="Home" onclick="goHome()"></i>
+      <i class="fas fa-file-medical" title="Upload" onclick="toggleSection('addRecord')"></i>
+      <i class="fas fa-cog" title="Settings" onclick="alert('Settings Clicked')"></i>
+    </div>
+
+    <div class="main">
+      <div class="card">
+        <h3>Welcome to MediBridge</h3>
+        <p>Welcome to MediBridge – A Decentralized Patient Health Record System
+            MediBridge is a revolutionary platform transforming how healthcare data is stored, accessed, and shared. At its core, MediBridge is a decentralized patient health record system that leverages the power of blockchain technology to place control of medical information directly into the hands of patients. Unlike traditional centralized systems that are prone to data breaches, manipulation, and single points of failure, MediBridge ensures that all medical records are stored securely across a distributed network. This means enhanced transparency, data integrity, and resilience against unauthorized access or cyberattacks.
+            Our platform prioritizes patient privacy and security. Health records are encrypted end-to-end, and access is granted only through patient-controlled authorization mechanisms. Using smart contracts and public-private key cryptography, MediBridge ensures that only verified medical professionals can view or update sensitive health information, with every action being immutably recorded on the blockchain. This not only builds trust but also creates a tamper-proof audit trail for every record transaction.
+            MediBridge also streamlines interoperability between clinics, hospitals, and laboratories, reducing redundancy and improving the quality of care. Whether it's for emergency treatment, long-term care, or specialist consultation, authorized professionals can instantly access up-to-date, accurate health data — no matter where the patient is. By embracing decentralization and prioritizing ethical data handling, MediBridge represents the future of digital healthcare — secure, transparent, patient-first, and built to last.</p>
+        <p>We prioritize user privacy. Your personal health information is encrypted and stored in a decentralized system, making it tamper-proof and available only to you and authorized professionals.</p>
+        <button class="btn" onclick="toggleSection('addRecord')">Add New Health Record</button>
+      </div>
+
+      <div class="card hidden" id="addRecord">
+        <h3>New Health Record</h3>
+        <div class="form-group">
+          <label>Select Section</label>
+          <div>
+            <button class="btn" onclick="setSection('Lab Result')">Lab Result</button>
+            <button class="btn" onclick="setSection('Prescription')">Prescription</button>
+            <button class="btn" onclick="setSection('Imaging')">Imaging</button>
+            <button class="btn" onclick="setSection('Consultation')">Consultation</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Upload File</label>
+          <input type="file" id="fileUpload" />
+        </div>
+
+        <div class="form-group">
+          <label>Date</label>
+          <input type="date" id="recordDate" />
+        </div>
+
+        <div class="form-group">
+          <label>Time</label>
+          <input type="time" id="recordTime" />
+        </div>
+
+        <div class="form-group">
+          <label>Doctor Name</label>
+          <input type="text" id="doctorName" placeholder="Enter Doctor's Name" />
+        </div>
+
+        <button class="btn" onclick="submitRecord()">Submit</button>
+        <div id="successMessage" class="hidden"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
